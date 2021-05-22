@@ -1,0 +1,19 @@
+<div
+  [style.width]="width"
+  [style.height]="height"
+  [cdkDragDisabled]="dragDisabled"
+  class="pin-box"
+  cdkDrag
+>
+  <div [class.drag-disabled]="dragDisabled" class="pin-title">
+    <span> <ng-content select="[header]"></ng-content> </span>
+    <div (click)="dragDisabled = !dragDisabled" class="pin-handle">
+      <img src="assets/icons/new-window.svg" alt="" />
+    </div>
+  </div>
+  <div class="pin-body">
+    <div class="content">
+      <ng-content select="[body]"></ng-content>
+    </div>
+  </div>
+</div>
